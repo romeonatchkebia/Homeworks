@@ -1,4 +1,4 @@
-const car = [
+/* const car = [
     {brand: "mercedes", model: "G class", engine: "6.3", start: 2000, end: 2020},
     {brand: "bmw", model: "e34", engine: "5.0", start: 1995, end: 2000},
     {brand: "audi", model: "s8", engine: "4.6", start: 1995, end: 2018},
@@ -9,7 +9,7 @@ const car = [
     {brand: "tesla", model: "s7", engine: "electronic", start: 2003, end: 2023},
 ];
 
-const ages = [6, 3, 9, 7, 8, 3, 5, 2, 40, 1, 7, 4, 0, 3, 15, 30, 26, 35];
+const ages = [6, 3, 9, 7, 8, 3, 5, 2, 40, 1, 7, 4, 0, 3, 15, 30, 26, 35]; */
 
 
 //forEach
@@ -139,10 +139,12 @@ console.log(totalYears);
 
 // all of tmethods
 
-const combined = ages
+/* const combined = ages
 .map(age => age * 2)
 .filter(age => age >= 15)
 .sort((a, b) => a - b)
 .reduce((total, age) => total + age, 0);
 
-console.log(combined);
+console.log(combined); */
+
+

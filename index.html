@@ -5,12 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h2>Hi everyone</h2>
-    <h3>javaScript learning</h3>
+    <div id="header-container">
+        <div id="links">
+            <a href="#">Home</a>
+            <a href="#">Category</a>
+            <a href="#">Collection</a>
+            <a href="#">Designe</a>
+            <a href="#">about</a>
+        </div>
+        
+        <div id="profile">  
+            <button><img id="profile-icon" class="profile-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rxmgZSv-adj8_ck9ubD60hG_-GTe1vjAQUUHE0m8Mr21qDmo6-pcFa9hJttWobyPT70&usqp=CAU" alt="cart-icon"></button>
+
+            <button id="cartBtn"><img class="profile-icon" src="https://i.pinimg.com/564x/d5/b0/4c/d5b04cc3dcd8c17702549ebc5f1acf1a.jpg" alt="person-icon"></button>
+
+        </div>
+    </div>
+
+    <div id="category">
+        <button id="man" >Man</button>
+        <button id="woman" >Woman</button>
+        <button id="children" >Children</button>
+    </div>
+
+    <div id="card-and-cart">
+        <div id="card-container">
+            <div class="card" id="card">
+                <img src="https://s3.us-east-2.amazonaws.com/ccp-prd-s3-uploads/2020/8/18/c3664542ef8391e7a838945a2bdeaa9177ec0758.png" id="image" alt="some image">
+    
+                <p id="title" class="pink">Cowboy</p>
+                <p id="subTitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, fugiat.</p>
+    
+                <div id="quantity"><p>Quantity: 35</p></div>
+                <div id="price" class="pink"><p>150$</p></div>
+    
+                <button id="add-to-cart">Add To Cart</button>
+            </div>
+        </div>
+    
+        <div id="cart-container">
+            <div id="my-cart">My Cart</div>
+            <div id="empty-txt">Your cart is empty</div>
+            <div id="border-line"></div>
+            <div id="footer">
+                <div>Total</div>
+                <div>$ 0.00</div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="./freeExercise.js"></script>
     <script src="./Homeworks.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
