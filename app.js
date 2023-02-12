@@ -109,7 +109,7 @@ const cardsRenderer = (item) => {
 
 const cardContainer = document.getElementById("card-container"); 
 
-cardContainer.innerHTML = hats.map((hat) => cardsRenderer(hat));
+cardContainer.innerHTML = hats.map((hat) => cardsRenderer(hat)).join('');
 
 const categoryBtn = document.querySelectorAll(`#man, #woman, #children, #all`);
 
@@ -119,16 +119,16 @@ const categoryBtns = [...categoryBtn];
 
 
 
-// cstegorization function
+// categorization function
 categoryBtns.forEach((categoryBtn) => {
     categoryBtn.addEventListener("click", () => {
         if(categoryBtn.textContent === "all") {
-            cardContainer.innerHTML = hats.map((item) => cardsRenderer(item));
+            cardContainer.innerHTML = hats.map((item) => cardsRenderer(item)).join('');
             return;
         }
 
         let filtered = hats.filter((hat) => hat.category === categoryBtn.textContent);
-        cardContainer.innerHTML = filtered.map((item) => cardsRenderer(item));
+        cardContainer.innerHTML = filtered.map((item) => cardsRenderer(item)).join('');
     });
 });
 
@@ -141,10 +141,8 @@ const searchInput = document.getElementById("input");
 
 searchBtn.addEventListener("click", () => {
     let x = searchInput.value.trim().toLowerCase();
-    hats.forEach((hat) => {
-        if (x === hat.title.trim().toLowerCase()) {
-            cardContainer.innerHTML = cardsRenderer(hat)
-        }
-    })
+    let matchingHats = hats.filter((hat) => x === hat.title.trim().toLowerCase());
+    cardContainer.innerHTML = matchingHats.map((hat) => cardsRenderer(hat)).join('');
 });
+
 
