@@ -72,6 +72,7 @@ body {
     font-size: 20px;
     border: 1px solid #21191d;
     padding: 10px;
+    
 }
 #card-container {
     display: flex;
