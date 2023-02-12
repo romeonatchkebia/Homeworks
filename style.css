@@ -21,6 +21,7 @@ body {
 #links {
     display: flex;
     flex: 1.5;
+    align-items: center;
     justify-content: space-between;   
 }
 #profile {
@@ -30,13 +31,34 @@ body {
     justify-content: end;
 }
 #profile > button {
-    max-width: 7%;
+    max-width: 8%;
     border-radius: 50%;
     background-color: white;
     padding: 1%;
 }
+#cart-count {
+    background-color: #eaeef7;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0 4%;
+}
 .profile-icon {
-    max-width: 100%;
+    max-width: 1.5rem;
+}
+#input {
+    font-size: 1rem;
+    padding: 1rem;
+}
+#searchBtn {
+    max-width: 20%;
+    border: none;
+}
+#searchImg {
+    max-height: 45px;
+}
+#search-div {
+    display: flex;
 }
 #category {
     display: flex;
@@ -45,10 +67,10 @@ body {
     gap: 1rem;
 }
 #category > button{
-    background-color: #0c2b70;
-    color: white;
+    background-color: hsl(187, 20%, 91%);
+    color: rgb(49, 58, 59);
     font-size: 20px;
-    border: 3px solid #21191d;
+    border: 1px solid #21191d;
     padding: 10px;
 }
 #card-container {

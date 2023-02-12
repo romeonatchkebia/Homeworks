@@ -147,4 +147,3 @@ console.log(totalYears);
 
 console.log(combined); */
 
-

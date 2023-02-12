@@ -14,21 +14,30 @@
             <a href="#">Category</a>
             <a href="#">Collection</a>
             <a href="#">Designe</a>
-            <a href="#">about</a>
+            <div id="search-div">
+                <input type="text" id="input" placeholder="Search">
+                <button id="searchBtn"><img src="https://img.icons8.com/plasticine/512/search-more.png" id="searchImg" alt="search button"></button>
+            </div>
         </div>
         
         <div id="profile">  
-            <button><img id="profile-icon" class="profile-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rxmgZSv-adj8_ck9ubD60hG_-GTe1vjAQUUHE0m8Mr21qDmo6-pcFa9hJttWobyPT70&usqp=CAU" alt="cart-icon"></button>
+            <div id="cart-count">
+                <button><img id="cartBtn" class="profile-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rxmgZSv-adj8_ck9ubD60hG_-GTe1vjAQUUHE0m8Mr21qDmo6-pcFa9hJttWobyPT70&usqp=CAU" alt="cart-icon"></button>
+    
+                <div>
+                    <p id="count">0</p> 
+                </div>
+            </div>
 
-            <button id="cartBtn"><img class="profile-icon" src="https://i.pinimg.com/564x/d5/b0/4c/d5b04cc3dcd8c17702549ebc5f1acf1a.jpg" alt="person-icon"></button>
-
+            <button ><img id="profile-icon" class="profile-icon" src="https://i.pinimg.com/564x/d5/b0/4c/d5b04cc3dcd8c17702549ebc5f1acf1a.jpg" alt="person-icon"></button>
         </div>
     </div>
 
     <div id="category">
-        <button id="man" >Man</button>
-        <button id="woman" >Woman</button>
-        <button id="children" >Children</button>
+        <button id="all" >all</button>
+        <button id="man" >man</button>
+        <button id="woman" >woman</button>
+        <button id="children" >children</button>
     </div>
 
     <div id="card-and-cart">
