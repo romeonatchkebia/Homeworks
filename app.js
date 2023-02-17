@@ -106,6 +106,7 @@ let cart = [];
 let myCart = [];
 
 
+
 // cards rendering function
 const cardsRenderer = (item) => {
     return `<div class="card">
@@ -154,10 +155,9 @@ cardContainer.innerHTML = hats.map((hat) => cardsRenderer(hat)).join("");
 
 
 
-const myCartDiv = document.getElementById("added-item");
+
 const addToCartBtns = document.getElementsByClassName("add-to-cart");
 let addToCartBtn = [...addToCartBtns];
-
 
 
 // myCart rendering function
@@ -179,51 +179,52 @@ const cartRenderer = (card) => {
             <div class="btn plus">+</div>           
         </div>
         <div> 
-        <button class="delete-button"><img id="delete-image" src="./assets/trash.png" alt="delete icon"></button>
-    </div> 
+        <button class="delete-button" onclick="deleteCart()" ><img
+        id="delete-image"src="./assets/trash.png" alt="delete icon"></button>
+        </div> 
     </div>
     `
 };         
 
+
 //add to cart
 const addCardsButtons = () => {
-    const myCarts = document.getElementById("added-cart");
+    const myCartDiv = document.getElementById("added-cart");
     const addToCartBtns = document.getElementsByClassName("add-to-cart");
     let addToCartBtn = [...addToCartBtns];
-
-
+    
     addToCartBtn.forEach((card, index) => {
         card.addEventListener("click", () => {
             cart.push(newHats[index].title);
             cartNum.innerHTML = cart.length;
             myCart.push(newHats[index]);
-            myCarts.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
-           
+            myCartDiv.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
         });
     });
 }; 
 
 addCardsButtons();
-cartNum.innerHTML = cart.length;
 
 
 
-
-/*  //remove items from myCart
+//remove items from myCart
 const deleteCart = () => {
-const deleteBtn = document.getElementsByClassName("delete-button");
-let deleteBtns = [...deleteBtn];
-
-
-    deleteBtns.forEach((button, index) => {
-        button.addEventListener("click", () => {
-          myCart.splice(index, 1);
-          myCartDiv.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
+    const myCartDiv = document.getElementById("added-cart");
+    const deleteBtn = document.getElementsByClassName("delete-button");
+    let deleteBtns = [...deleteBtn];
+    console.log(deleteBtns);
+    
+    
+    deleteBtns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            cart.splice(newHats[index].title, 1);
+            cartNum.innerHTML = cart.length;
+            myCart.splice(newHats[index], 1);
+            myCartDiv.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
+            
         });
     });
 }; 
-
-deleteCart(); */
 
 
 
