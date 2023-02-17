@@ -72,12 +72,22 @@ body {
     font-size: 20px;
     border: 1px solid #21191d;
     padding: 10px;
-    
+
 }
 #card-container {
     display: flex;
     flex-wrap: wrap;
+    flex: 2;
     justify-content: center;
+}
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 300px;
+    overflow-x: auto;
+    overflow-y: scroll;
+    margin: 15px 20px;
 }
 .card {
     display: flex;
@@ -96,7 +106,7 @@ body {
     width: 100%;
     height: 100%;
 }
-#add-to-cart{
+.add-to-cart{
     background-color: #4a74c2;
     color: white;
     min-height: 1rem;
@@ -106,31 +116,62 @@ body {
 #card-and-cart {
     display: flex;
     justify-content: space-between;
+    overflow: auto;
 }
-#cart-container {
-    background-color: white;
-    height: 20%;
-    margin: 1rem;
-    min-width: 20%;
-    max-width: 10rem;
-    max-height: 10rem;
-}
-#my-cart { 
+.my-cart { 
+    display: flex;
     background-color: #4f74c5;
+    justify-content: space-between;
     padding: 1rem;
     color: white;
 }
-#empty-txt {
+#item-price-unit {
     display: flex;
-    flex-wrap: wrap;
-    font-style: italic;
-    padding: 1rem;
+    justify-content: start;
+    gap: 15%;
 }
-#border-line {
+.units {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    flex: 1;
+}
+.unit-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex: 2;
+}
+.cart-added-image {
+    display: flex;
+    flex-direction: column;
+}
+.delete-button {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 10px;
+}
+#delete-image{
+    max-width: 70%;
+}
+#added-cart > div {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+.border-line {
     border-bottom: 2px solid #0c2b70;
+}
+.added-image {
+    max-width: 70px;
+    margin-left: 8px;
 }
 #footer {
     display: flex;
+    background-color: white;
     justify-content: space-between;
     padding: 1rem;
 }

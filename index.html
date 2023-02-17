@@ -14,7 +14,7 @@
             <a href="#">Category</a>
             <a href="#">Collection</a>
             <a href="#">Designe</a>
-            
+
             <div id="search-div">
                 <input type="text" id="input" placeholder="Search">
                 <button id="searchBtn"><img src="https://img.icons8.com/plasticine/512/search-more.png" id="searchImg" alt="search button"></button>
@@ -26,7 +26,7 @@
                 <button><img id="cartBtn" class="profile-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rxmgZSv-adj8_ck9ubD60hG_-GTe1vjAQUUHE0m8Mr21qDmo6-pcFa9hJttWobyPT70&usqp=CAU" alt="cart-icon"></button>
     
                 <div>
-                    <p id="count">0</p> 
+                    <h4 id="count">0</h4>
                 </div>
             </div>
 
@@ -35,10 +35,10 @@
     </div>
 
     <div id="category">
-        <button id="all" >all</button>
-        <button id="man" >man</button>
-        <button id="woman" >woman</button>
-        <button id="children" >children</button>
+        <button class="categoryBtn" >all</button>
+        <button class="categoryBtn" >man</button>
+        <button class="categoryBtn" >woman</button>
+        <button class="categoryBtn" >children</button>
     </div>
 
     <div id="card-and-cart">
@@ -52,24 +52,51 @@
                 <div id="quantity"><p>Quantity: 35</p></div>
                 <div id="price" class="pink"><p>150$</p></div>
     
-                <button id="add-to-cart">Add To Cart</button>
+                <button class="add-to-cart">Add To Cart</button>
             </div>
         </div>
     
-        <div id="cart-container">
-            <div id="my-cart">My Cart</div>
-            <div id="empty-txt">Your cart is empty</div>
-            <div id="border-line"></div>
+        <div class="cart-container">
+            <div class="my-cart">My Cart</div>
+            <div class="border-line"></div>
+            <div class="my-cart" id="item-price-unit">
+                <div>Item</div>
+                <div>Unit price</div>
+                <div>Unit</div>
+            </div>
+            
+            <div id="added-cart">
+               <!--  <div id="added-cart">
+                    <div class="cart-added-image">
+                        <img class="added-image" src="https://cdn.shopify.com/s/files/1/0397/0396/9949/products/stafford_escorial_navy_a_1600x.jpg?v=1640025332" alt="panama">
+                        <h5>homburg</h5>
+                    </div>
+    
+                    <div class="unit-price">
+                        <p>$127</p>
+                    </div>
+
+                    <div class="units">
+                        <div class="btn minus">-</div>
+                        <div class="number">1</div>
+                        <div class="btn plus">+</div>           
+                    </div>
+
+                    <div> 
+                        <button class="delete-button"><img id="delete-image" src="./assets/trash.png" alt="delete icon"></button>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="border-line"></div>
             <div id="footer">
-                <div>Total</div>
-                <div>$ 0.00</div>
+                <div>Total (Items:0) $ 0.00</div>
             </div>
         </div>
     </div>
 
 
     <script src="./freeExercise.js"></script>
-    <script src="./Homeworks.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
