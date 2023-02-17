@@ -212,20 +212,19 @@ const deleteCart = () => {
     const myCartDiv = document.getElementById("added-cart");
     const deleteBtn = document.getElementsByClassName("delete-button");
     let deleteBtns = [...deleteBtn];
-    console.log(deleteBtns);
-    
-    
+  
     deleteBtns.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-            cart.splice(newHats[index].title, 1);
-            cartNum.innerHTML = cart.length;
-            myCart.splice(newHats[index], 1);
-            myCartDiv.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
-            
-        });
+      btn.addEventListener("click", () => {
+        cart.splice(index, 1);
+        cartNum.innerHTML = cart.length;
+        myCart.splice(index, 1);
+        myCartDiv.innerHTML = myCart.map((hat) => cartRenderer(hat)).join("");
+        deleteBtns = [...document.getElementsByClassName("delete-button")];
+        deleteCart();
+      });
     });
-}; 
-
+  };
+  
 
 
 //filter
