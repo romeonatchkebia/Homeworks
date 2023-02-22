@@ -108,3 +108,63 @@ console.log(newArrays);  */
 
 
 
+
+// countries dates
+
+let date = new Date();
+
+let georgiaTime = date.toLocaleString("en-US", {timeZone: "Asia/Tbilisi"});
+
+let franceTime = date.toLocaleString("en-US", {timeZone: "Europe/Paris"});
+
+let germanTime = date.toLocaleString("en-US", {timeZone: "Europe/Berlin"});
+
+let chinaTime = date.toLocaleString("en-US", {timeZone: "Asia/Shanghai"});
+
+let japanTime = date.toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+
+let usaTime = date.toLocaleString("en-US", {timeZone: "America/New_York"});
+
+let brazilTime = date.toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+
+let australiaTime = date.toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+
+const container = document.getElementsByClassName("container");
+
+timeRender = () => {
+    container[0].innerHTML = `
+    <ul>
+        <li>georgia</li>
+        <li>france</li>
+        <li>germain</li>
+        <li>china</li>
+        <li>japan</li>
+        <li>usa</li>
+        <li>brazil</li>
+        <li>australia</li>
+    </ul>
+
+        <ul>
+            <li id="georgia">${georgiaTime}</li>
+            <li id="france">${franceTime}</li>
+            <li id="germain">${germanTime}</li>
+            <li id="china">${chinaTime}</li>
+            <li id="japan">${japanTime}</li>
+            <li id="usa">${usaTime}</li>
+            <li id="brazil">${brazilTime}</li>
+            <li id="sweden">${australiaTime}</li>
+        </ul>
+    `;
+};
+
+timeRender();
+
+
+
+
+
+
+
+
+
+
