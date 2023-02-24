@@ -1,122 +1,99 @@
-/* 
 
-const btnDecrease = document.getElementById("decrease");
-const btnIncrease = document.getElementById("increase");
-const num = document.getElementById("num");
+const input = document.querySelector("#input");
+const addBtn = document.querySelector("#plus-btn");
+const listContainer = document.querySelector("#list-container");
 
-let number = 0 
-
-btnDecrease.addEventListener("click", () => {
-    number --
-    num.innerHTML = number
-    if (number > 0) {
-        num.style.color = "blue"
-    }
-    else if (number < 0) {
-        num.style.color = "red"
-    }
-    else {
-        num.style.color = "yellow"
-    }
-});
-
-btnIncrease.addEventListener("click", () => {
-    number ++
-    num.innerHTML = number
-    if (number > 0) {
-        num.style.color = "blue"
-    }
-    else if (number < 0) {
-        num.style.color = "red"
-    }
-    else {
-        num.style.color = "yellow"
-    }
-});
+let addedTasksArray = [];
 
 
+// list rendering function
+const listRenderer = (item) => {
+  return `<div class="list-text-buttons">
+    <div>
+        <p>${item}</p>
+    </div>
+
+    <div class="list-item">
+        <button class="delete"><img class="list-images" src="./asset/trash.png" alt="trash"></button>
+            
+        <button class="done"><img class="list-images" src="./asset/done.png" alt="done"></button>
+    </div>                  
+  </div>
+  `;
+};
 
 
+// add tasks to the list
+const addTasksToList = () => {
 
-const front = document.getElementById("front");
-const back = document.getElementById("back");
-const container = document.getElementById("container");
+    addBtn.addEventListener("click", () => {
+      let task = input.value;
+      if (task !== "") {
+        addedTasksArray.push(task);
+        listContainer.innerHTML = addedTasksArray.map((task) => listRenderer(task)).join("");
+        input.value = "";
+        deleteTask();
+        addToCompleted();
+      } else {
+        alert("put some text inside the box");
+      }
+    });
+};
 
-
-let count = 0
-
-front.addEventListener("click", () => {
-    count++;
-    container.style.backgroundImage = `url(./assets/fo-${count}.jpg);`
-});
-
-back.addEventListener("click", () => {
-    count--;
-    container.style.backgroundImage = `url(./assets/fo-${count}.jpg);`
-});
- 
-
-
- */
+addTasksToList();
 
 
 
-
-// digital watch
-
-const container = document.getElementById("container");
-
-function showtime() {
-    let date = new Date();
-
-    let hours = date.getHours();
-    let minute = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    let formatedTime = formatTime(hours);
-    hours = modified(hours);
+// remove tasks from the list
+const deleteTask = () => {
+    const deleteBtn = document.querySelectorAll('.delete');
+    const listContainer = document.querySelector("#list-container");
     
-    hours = addZero(hours);
-    minute = addZero(minute);
-    seconds = addZero(seconds);
-
-    container.innerHTML = `${hours}:${minute}:${seconds} ${formatedTime}`
+    deleteBtn.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        addedTasksArray.splice(index, 1);
+        listContainer.innerHTML = addedTasksArray.map((task) => listRenderer(task)).join("");
+        deleteTask();
+        addToCompleted();
+      });
+    });
 };
+
+
+
+
+let completedTasksArray = [];
+
+//comleted tasks renderer
+const comTaskRender = (item) => {
+    return `
+
+    <div class="completed-tasks">
+        <ul>
+            <li>${item}</li>
+        </ul>
+    </div>`
+};
+
+
+//add to copmleted list function
+const addToCompleted = () => {
+    const doneBtn = document.querySelectorAll(".done");
+    const completedDiv = document.getElementById("completed");
     
-
-
-function modified(time) {
-    if (time > 12) {
-        time = time - 12;
-    }
-    if (time === 0) {
-        time = 12;
-    }
-
-    return time;
+    doneBtn.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            completedTasksArray.push(addedTasksArray[index]);
+            console.log(completedTasksArray);
+            addedTasksArray.splice(index, 1);
+            listContainer.innerHTML = addedTasksArray.map((item) => listRenderer(item)).join("");
+            completedDiv.innerHTML = completedTasksArray.map((item) => comTaskRender(item)).join("");
+            addToCompleted();
+            deleteTask();
+        }) 
+    }) 
+        
+   
 };
 
-
-
-function formatTime(time) {
-    let format = "AM";
-    if(time >= 12) {
-        format = "PM";
-    }
-    return format;
-};
-
-function addZero(time) {
-    if (time < 10){
-        time = "0" + time
-    }
-    return time;
-}
-
-showtime();
-//setInterval(showtime, 1000);
-
-
-
-
-
+addToCompleted();
