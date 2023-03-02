@@ -1,8 +1,6 @@
 //this is my homework for 30.01.2023
 
-
-
- /* 1. Write a script that loops through an array of strings and logs each one to the console.  */
+/* 1. Write a script that loops through an array of strings and logs each one to the console.  */
 
 /* function logger(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -15,14 +13,10 @@ logger(x);
  */
 // აქ ფუნქციით გავაკეთე, მაგრამ მოგვიანებით რომ ვნახე თურმე სხვა უფრო მარტივი მეთოდებითაც შეიძლებოდა
 
-
-
-
 /*  2. Create a program that takes an array of numbers and returns the sum of all 
 the numbers in the array. Use a for loop to iterate over the array and add each number to a total variable. */
 
-
- /* function sumCalculator(x) {
+/* function sumCalculator(x) {
     let sum = 0;
     for (let i = 0; i < x.length; i++) {
         sum += x[i];
@@ -33,15 +27,10 @@ the numbers in the array. Use a for loop to iterate over the array and add each 
 console.log(sumCalculator([5,6,8,9,1])); 
  */
 
-
-
-
-
 /* 3. Create a function that takes a number as an argument and returns "positive" if the number is positive, "negative" if the number is negative, and "zero" if the number is zero. */
 
 //ვეცადე ცოტათი გამერთულებინა და მასივიდან ამოეღო ციფრები, და არა ფუნქციაში პირდაპირ თითო-თითოდ გადაცემით.
 
-  
 /* function numbInspector (arr) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > 0) {
@@ -62,11 +51,6 @@ console.log(sumCalculator([5,6,8,9,1]));
 let x = [3, 5, 9, -12, 7, -3, 0, -4, 0];
 numbInspector(x); */
 
-
-
-
-
-
 /* 4. Create a program that takes a string and returns the number of vowels in the string. Use a for loop to iterate over the string, and use an if statement to check if each character is a vowel. */
 
 /*  function vowelSummer(string) {
@@ -82,13 +66,8 @@ numbInspector(x); */
 console.log(vowelSummer("HELLO")); 
  */
 // აქ ძალიან გავიჭედე და ჩატი დავიხმარე, მაგრამ ახსნა ძალიან კარგად წავიკითხე და რეალურად გავაანალიზე კოდის რა ნაწილი სად რას აკეთებს და რა ლოგიკით მუშაობს.
- 
 
-
-
-
-
- /* 5. Create a program that takes an array of strings and returns an array of the same strings in reverse order. Use a for loop to iterate over the array in reverse order and add each string to a new array.  */ 
+/* 5. Create a program that takes an array of strings and returns an array of the same strings in reverse order. Use a for loop to iterate over the array in reverse order and add each string to a new array.  */
 
 /*  function arrayConverter(arrays) {
     let newArrays = [];
@@ -103,36 +82,34 @@ let ar1 = ["my", "name", "is", "john"];
 let newArrays = arrayConverter(ar1);
 console.log(newArrays);  */
 
-
-
-
-
-
-
 // countries dates
 
 let date = new Date();
 
-let georgiaTime = date.toLocaleString("en-US", {timeZone: "Asia/Tbilisi"});
+let georgiaTime = date.toLocaleString("en-US", { timeZone: "Asia/Tbilisi" });
 
-let franceTime = date.toLocaleString("en-US", {timeZone: "Europe/Paris"});
+let franceTime = date.toLocaleString("en-US", { timeZone: "Europe/Paris" });
 
-let germanTime = date.toLocaleString("en-US", {timeZone: "Europe/Berlin"});
+let germanTime = date.toLocaleString("en-US", { timeZone: "Europe/Berlin" });
 
-let chinaTime = date.toLocaleString("en-US", {timeZone: "Asia/Shanghai"});
+let chinaTime = date.toLocaleString("en-US", { timeZone: "Asia/Shanghai" });
 
-let japanTime = date.toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+let japanTime = date.toLocaleString("en-US", { timeZone: "Asia/Tokyo" });
 
-let usaTime = date.toLocaleString("en-US", {timeZone: "America/New_York"});
+let usaTime = date.toLocaleString("en-US", { timeZone: "America/New_York" });
 
-let brazilTime = date.toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+let brazilTime = date.toLocaleString("en-US", {
+  timeZone: "America/Sao_Paulo",
+});
 
-let australiaTime = date.toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+let australiaTime = date.toLocaleString("en-US", {
+  timeZone: "Australia/Sydney",
+});
 
 const container = document.getElementsByClassName("container");
 
 timeRender = () => {
-    container[0].innerHTML = `
+  container[0].innerHTML = `
     <ul>
         <li>georgia</li>
         <li>france</li>
@@ -158,13 +135,3 @@ timeRender = () => {
 };
 
 timeRender();
-
-
-
-
-
-
-
-
-
-
